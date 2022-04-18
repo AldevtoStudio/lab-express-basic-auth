@@ -22,8 +22,7 @@ app.use(
     src: path.join(__dirname, 'public/styles'),
     dest: path.join(__dirname, 'public/styles'),
     prefix: '/styles',
-    outputStyle:
-      process.env.NODE_ENV === 'development' ? 'expanded' : 'compressed',
+    outputStyle: process.env.NODE_ENV === 'development' ? 'expanded' : 'compressed',
     force: process.env.NODE_ENV === 'development',
     sourceMap: process.env.NODE_ENV === 'development'
   })
@@ -41,7 +40,7 @@ app.use(
       maxAge: 15 * 24 * 60 * 60 * 1000 // 15 days (to miliseconds).
     },
     store: MongoStore.create({
-      mongoUrl: 'mongodb://localhost:27017/node-basic-authentication',
+      mongoUrl: 'mongodb://127.0.0.1:27017/lab-express-basic-auth',
       ttl: 60 * 60 // 60 minutes (to seconds) before connection is refreshed.
     })
   })
